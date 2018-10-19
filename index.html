@@ -3,10 +3,32 @@
 <title>Piece of Cake</title>
 <h1>Piece of Cake Management Page</h1>
 <body>
-    <ul><a href="employee.html">Employee Hours</a></ul>
-    <ul><a href="ingredients.html">Inventory</a></ul>
-    <ul><a href="customers.html">Customers</a></ul>
-    <ul><a href="orders.html">Orders</a></ul>
-    <ul><a href="menu_items.html">Menu</a></ul>
+    <h3>Enter Hours:</h3>
+        <form id="addHours" action="./employee.html" method="POST">
+            Employee ID: <input type="text" name="emp_id">
+            First Name: <input type="text" name="fname">
+            Last Name: <input type="text" name="lname">
+            Hours: <input type="text" name="hours">
+            <input type="submit" name="Submit">
+        </form>
+    <h3><a href="./employee.html">View Hours Here</a></h3>
+    <h3>Enter Orders:</h3>
+        <form id="addOrders" action="./orders.html" method="POST">
+            Number of Items: <input type="text" name="num_items">
+            Total: <input type="text" name="cost">
+            <input type="submit" name="Submit">
+        </form>
+    <h3><a href="./orders.html">View All Orders Here</a></h3>
+    <h3>Add Customers:</h3>
+        <form id="addCustomer" action="./customers.html" method="POST">
+            Phone Number: <input type="text" name="phone_num">
+            First Name: <input type="text" name="fname">
+            Last Name: <input type="text" name="lname">
+            Order ID: <input type="text" name="order_id">
+            <input type="submit" name="Submit">
+        </form>
+    <h3><a href="./customers.html">View All Customers Here</a></h3>
+    <h3><a href="./menu_items.html">Menu</a></h3>
+    <h3><a href="./ingredients.html">Inventory</a></h3>
 </body>
 </html>
