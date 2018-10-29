@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+<title>Order Management</title>
+<h2><a href="./index.html">Home</a></h2>
+<h1>Piece of Cake Orders Page</h1>
+<h2>Remove Order by ID</h2>
+<form id="removeOrder" action="./orders.html" method="POST">
+    Order ID: <input type="text" name="order_id">
+    <input type="submit" name="Remove">
+</form>
+<br>
+<table>
+        <thead>
+            <th>Order ID</th>
+            <th>Total Items</th>
+            <th>Cost</th>
+        </thead>
+        <tbody>
+            <tr>
+                <td>{{order_id}}</td>
+                <td>{{num_items}}</td>
+                <td>{{cost}}</td>
+            </tr>
+        </tbody>
+</table>
+</body>
+</html>

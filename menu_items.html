@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+<title>Piece of Cake Menu</title>
+<h2><a href="./index.html">Home</a></h2>
+<h1>Menu</h1>
+<button type="button">Display All Milkshakes</button>
+<button type="button">Display All Slices of Pies</button>
+<button type="button">Display All Whole Pies</button>
+<br>
+<h2>Remove Menu Item</h2>
+<form id="removeItem" action="./menu_items.html" method="POST">
+    SKU: <input type="text" name="item_id">
+    <input type="submit" name="Delete">
+</form>
+<br>
+<table>
+        <thead>
+            <th>Item ID</th>
+            <th>Name</th>
+            <th>Cost</th>
+            <th>Food Type</th>
+        </thead>
+        <tbody>
+            <tr>
+                <td>{{item_id}}</td>
+                <td>{{name}}</td>
+                <td>{{cost}}</td>
+                <td>{{food_type}}</td>
+            </tr>
+        </tbody>
+</table>
+</body>
+</html>

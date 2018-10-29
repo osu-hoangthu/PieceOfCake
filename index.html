@@ -2,4 +2,48 @@
 <html>
 <title>Piece of Cake</title>
 <h1>Piece of Cake Management Page</h1>
+<body>
+    <h3>Enter New Employees Here:</h3>
+        <form id="addNewEmp" action="./employee.html" method="POST">
+            First Name: <input type="text" name="fname">
+            Last Name: <input type="text" name="lname">
+            Pay: <input type="text" name="pay">
+            Hours: <input type="text" name="hours">
+            <input type="submit" name="Submit">
+        </form>
+    <h3><a href="./employee.html">View Employees Here</a></h3>
+    <h3>Enter New Orders Here:</h3>
+        <form id="addOrders" action="./orders.html" method="POST">
+            Number of Items: <input type="text" name="num_items">
+            Total: <input type="text" name="cost">
+            <input type="submit" name="Submit">
+        </form>
+    <h3><a href="./orders.html">View All Orders Here</a></h3>
+    <h3>Add Customers:</h3>
+        <form id="addCustomer" action="./customers.html" method="POST">
+            Phone Number: <input type="text" name="phone_num">
+            First Name: <input type="text" name="fname">
+            Last Name: <input type="text" name="lname">
+            Order ID: <input type="text" name="order_id">
+            <input type="submit" name="Submit">
+        </form>
+    <h3><a href="./customers.html">View All Customers Here</a></h3>
+    <h3>Add Menu Item:</h3>
+    <form id="addItem" action="./menu_items.html" method="POST">
+        Name: <input type="text" name="name">
+        Cost: <input type="text" name="cost">
+        Food type: <input type="text" name="food_type">
+        <input type="submit" name="Submit">
+    </form>
+    <h3><a href="./menu_items.html">Menu</a></h3>
+    <h3>Add New Inventory</h3>
+    <form id="addIngredients" action="./ingredients.html" method="POST">
+        SKU: <input type="text" name="sku">
+        Name: <input type="text" name="name">
+        Cost: <input type="text" name="cost">
+        Inventory: <input type="text" name="inventory">
+        <input type="submit" name="Submit">
+    </form>
+    <h3><a href="./ingredients.html">Inventory</a></h3>
+</body>
 </html>

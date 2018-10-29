@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+<title>Ingredient Inventory</title>
+<h2><a href="./index.html">Home</a></h2>
+<h1>Inventory</h1>
+<h2>Search Inventory</h2>
+<form id="searchSKU" action="./ingredients.html" method="POST">
+    SKU: <input type="text" name="sku">
+    <input type="submit" name="Search">
+</form>
+<br>
+<button type="button">Show Empty Inventory</button>
+<br>
+<h2>Update Inventory</h2>
+<form id="searchSKU" action="./ingredients.html" method="POST">
+    SKU: <input type="text" name="sku">
+    New Amount in Inventory <input type="text" name="inventory">
+    <input type="submit" name="Update">
+</form>
+<br>
+<table>
+        <thead>
+            <th>SKU</th>
+            <th>Name</th>
+            <th>Cost</th>
+            <th>Inventory</th>
+        </thead>
+        <tbody>
+            <tr>
+                <td>{{sku}}</td>
+                <td>{{name}}</td>
+                <td>{{cost}}</td>
+                <td>{{inventory}}</td>
+            </tr>
+        </tbody>
+</table>
+</body>
+</html>
