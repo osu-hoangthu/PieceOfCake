@@ -4,19 +4,19 @@
 INSERT INTO employees (fname, lname, pay, hours) VALUES (:fname, :lname, :pay, :hours);
 
 --Display all Employees on "employee.html" page
-SELECT emp_id, fname, lname, pay, hours FROM `employees`;
+SELECT emp_id, fname, lname, pay, hours FROM employees;
 
 --Remove an Employee from the DB
 DELETE FROM employees WHERE emp_id = :employee_id_selected_from_employees_page;
 
 --Add Orders to DB
-INSERT INTO `orders` (num_items, cost) VALUES (:num_items, :cost);
+INSERT INTO orders (num_items, cost) VALUES (:num_items, :cost);
 
 --Display all Orders on "orders.html" page
-SELECT order_id, num_items, cost FROM `orders`;
+SELECT order_id, num_items, cost FROM orders;
 
 --Add Customers to DB
-INSERT INTO `customers` (phone_num, fname, lname, order_id) VALUES (:phone_num, :fname, :lname, :order_id);
+INSERT INTO customers (phone_num, fname, lname, order_id) VALUES (:phone_num, :fname, :lname, :order_id);
 
 --Display all Customers on customers page
 SELECT phone_num, fname, lname, order_id FROM `customers`;
@@ -40,3 +40,5 @@ SELECT name, cost FROM `menu_items` WHERE food_type = Milkshake;
 
 --Remove item from menu (ex: seasonal items)
 DELETE FROM menu_items WHERE item_id = :input_item_id;
+
+SELECT phone_num, fname, lname, order_id FROM customers;
