@@ -3,27 +3,41 @@
 <title>Customer Management</title>
 <h2><a href="./index.html">Home</a></h2>
 <h1>Customers</h1>
-<h2>Update Customer Order by Phone Number</h2>
+
+<h3> Search for Customer by ID</h3> 
+<div>
+  <input type="text" placeholder="Search..">
+  <input type="submit" name="Submit" value="Search Customers">
+</div>
+
+<h3>Add Customers</h3>
+        <form id="addCustomer" action="./customers.html" method="POST">
+            Customer ID: <input type="text" name="cust_id">
+			Phone Number: <input type="text" name="phone_num">
+            First Name: <input type="text" name="fname">
+            Last Name: <input type="text" name="lname">
+            <input type="submit" name="Submit" value="Add New Customer">
+        </form>
+		
+<h3>Update Customer Phone Number</h3>
 <form id="removeCust" action="./customers.html" method="POST">
+	Customer ID: <input type="text" name="cust_id">
     Phone Number: <input type="text" name="phone_num">
-    Order ID: <input type="text" name="order_id">
-    <input type="submit" name="Remove">
+    <input type="submit" name="Remove" value= "Update Phone Number">
 </form>
 <br>
-<h2>Customers Orders</h2>
+<h2>Customers Information</h2>
 <table>
         <thead>
             <th>Phone Number</th>
             <th>First Name</th>
             <th>Last Name</th>
-            <th>Order ID</th>
         </thead>
         <tbody>
             <tr>
                 <td>{{phone_num}}</td>
                 <td>{{fname}}</td>
                 <td>{{lname}}</td>
-                <td>{{order_id}}</td>
             </tr>
         </tbody>
 </table>

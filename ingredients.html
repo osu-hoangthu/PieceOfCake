@@ -11,10 +11,19 @@
 <br>
 <button type="button">Show Empty Inventory</button>
 <br>
-<h2>Update Inventory</h2>
+<h3>Add New Ingredient to Inventory</h3>
+    <form id="addIngredients" action="./ingredients.html" method="POST">
+        SKU: <input type="text" name="sku">
+        Name: <input type="text" name="name">
+        Cost: <input type="text" name="cost">
+        Amount in Inventory: <input type="text" name="inventory">
+        <input type="submit" name="Submit" value="Add Ingredient">
+    </form>
+	
+<h3>Update Inventory</h3>
 <form id="searchSKU" action="./ingredients.html" method="POST">
     SKU: <input type="text" name="sku">
-    New Amount in Inventory <input type="text" name="inventory">
+    New Amount in Inventory: <input type="text" name="inventory">
     <input type="submit" name="Update">
 </form>
 <br>
