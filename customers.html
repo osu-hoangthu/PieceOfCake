@@ -2,6 +2,33 @@
 <html>
 <title>Customer Management</title>
 <h1>Customers</h1>
+<h2><a href="./index.html">Home</a></h2>
+<h1>Customers</h1>
+
+<h3> Search for Customer by ID</h3> 
+<div>
+  <input type="text" placeholder="Search..">
+  <input type="submit" name="Submit" value="Search Customers">
+</div>
+
+<h3>Add Customers</h3>
+        <form id="addCustomer" action="./customers.html" method="POST">
+            Customer ID: <input type="text" name="cust_id">
+			Phone Number: <input type="text" name="phone_num">
+            First Name: <input type="text" name="fname">
+            Last Name: <input type="text" name="lname">
+            <input type="submit" name="Submit" value="Add New Customer">
+        </form>
+		
+<h3>Update Customer Phone Number</h3>
+<form id="removeCust" action="./customers.html" method="POST">
+	Customer ID: <input type="text" name="cust_id">
+    Phone Number: <input type="text" name="phone_num">
+    <input type="submit" name="Remove" value= "Update Phone Number">
+</form>
+<br>
+<h2>Customers Information</h2>
+
 <table>
         <thead>
             <th>Phone Number</th>
