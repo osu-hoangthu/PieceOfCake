@@ -1,0 +1,8 @@
+<html>
+<h1>Update Order</h1>
+<form id="update-Order" action="/order" method="post">
+    Number of Items: <input type="text" name="num_items" value="{{orderSingle.num_items}}"><br>
+    Cost: <input type="text" name="cost" value="{{orderSingle.cost}}"><br>
+</form>
+<button onclick="updateOrder({{orderSingle.order_id}})">Update</button>
+</html>

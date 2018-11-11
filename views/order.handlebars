@@ -1,0 +1,53 @@
+<html>
+<h1>Order Management Page</h1>
+<h3>Add Orders:</h3>
+<form id="addOrder" action="/order" method="post">
+    Customer ID: <input type="text" name="cust_id">
+    Employee ID: <input type="text" name="emp_id">
+    Number of Items: <input type="text" name="num_items">
+    Cost: <input type="text" name="cost"> </select> <input type="submit" value="Add Order">
+ </form>
+<br/>
+
+{{!-- <form id='filter_people' action='' method=''>
+<!--- this form does not submit directly, the button handles all the interaction with backend -->
+    <label> Filter by homeworld </label>
+    <select id='homeworld_filter' name="homeworld"> 
+        {{#each planets}}
+        <option value="{{id}}">{{name}}</option>
+        {{/each}}
+    </select><br>
+    <input type="button" value="Filter" onclick="filterPeopleByHomeworld()">
+</form> --}}
+
+{{!-- <form id='search_people' action='' method=''>
+<!--- this form does not submit directly, the button handles all the interaction with backend -->
+    <label> Search people for first name starting with:</label>
+    <input id='first_name_search_string' type='text' name='first_name_search_string' value=''>
+    <input type="button" value="Search" onclick="searchPeopleByFirstName()">
+</form> --}}
+
+<h3>Orders Table:</h3>
+<table>
+    <thead> 
+        <th>Customer ID</th> 
+        <th>Employee ID</th> 
+        <th>Order ID</th>
+        <th>Number of Items</th>  
+        <th>Cost</th>
+    </thead> 
+    <tbody>
+        {{#each order}} 
+        <tr> 
+            <td>{{cust_id}}</td> 
+            <td>{{emp_id}}</td> 
+            <td>{{order_id}}</td> 
+            <td>{{num_items}}</td>
+            <td>{{cost}}</td>
+            <td><button onclick="deleteOrder({{order_id}})">Delete</button></td>
+            <td><a href="/order/{{order_id}}">Update</a></td>
+        </tr> 
+        {{/each}} 
+    </tbody> 
+</table> 
+</html>

@@ -1,0 +1,32 @@
+<html>
+<h1>Customer Management Page</h1>
+<h3>Add New Customers:</h3>
+<form id="addCust" action="/customers" method="post">
+    Phone Number: <input type="text" name="phone_num">
+    First name: <input type="text" name="fname">
+    Last name: <input type="text" name="lname"><input type="submit" value="Add New Customer">
+ </form>
+<br/>
+
+<h3>Customer List:</h3>
+<table>
+    <thead> 
+        <th>Customer ID</th>
+        <th>Phone Number</th>
+        <th>First Name</th> 
+        <th>Last Name</th> 
+    </thead> 
+    <tbody>
+        {{#each customerPlural}} 
+        <tr>
+            <td>{{cust_id}}</td> 
+            <td>{{phone_num}}</td> 
+            <td>{{fname}}</td> 
+            <td>{{lname}}</td> 
+            <td><button onclick="deleteCust({{cust_id}})">Delete</button></td>
+            <td><a href="/customers/{{cust_id}}">Update</a></td>
+        </tr> 
+        {{/each}} 
+    </tbody> 
+</table> 
+</html>

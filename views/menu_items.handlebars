@@ -1,0 +1,32 @@
+<html>
+<h1>Menu Management Page</h1>
+<h3>Add New Specials:</h3>
+<form id="addMenuItem" action="/menu_items" method="post">
+    Name: <input type="text" name="name">
+    Cost: <input type="text" name="cost">
+    Food Type: <input type="text" name="food_type"><input type="submit" value="Add Special">
+ </form>
+<br/>
+
+<h3>Menu:</h3>
+<table>
+    <thead> 
+        <th>ID</th> 
+        <th>Name</th> 
+        <th>Cost</th>
+        <th>Food Type</th>  
+    </thead> 
+    <tbody>
+        {{#each menu_item_plural}} 
+        <tr> 
+            <td>{{item_id}}</td> 
+            <td>{{name}}</td> 
+            <td>{{cost}}</td> 
+            <td>{{food_type}}</td>
+            <td><button onclick="deleteItem({{item_id}})">Delete</button></td>
+            <td><a href="/menu_item/{{item_id}}">Update</a></td>
+        </tr> 
+        {{/each}} 
+    </tbody> 
+</table> 
+</html>
