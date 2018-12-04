@@ -21,7 +21,7 @@ module.exports = function(){
                 res.write(JSON.stringify(error));
                 res.end();
             }
-            context.empPlural = results[0];
+            context.empPlural = results;
             complete();
         });
     }
@@ -37,7 +37,6 @@ module.exports = function(){
         function complete(){
             callbackCount++;
             if(callbackCount >= 1){
-                console.log("rendering...")
                 res.render('employees', context);
             }
         }

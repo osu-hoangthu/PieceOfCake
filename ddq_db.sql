@@ -128,8 +128,8 @@ CREATE TABLE `employees_customers`(
     `emp_id` int(11) NOT NULL,
     `cust_id` int(11) NOT NULL,
     primary key(emp_id, cust_id),
-    foreign key(emp_id) references employees(emp_id),
-    foreign key(cust_id) references customers(cust_id)
+    CONSTRAINT fk_name2 foreign key(emp_id) references employees(emp_id) ON DELETE CASCADE,
+    CONSTRAINT fk_name3 foreign key(cust_id) references customers(cust_id) ON DELETE CASCADE
 );
 /*Inserting five rows of sample data into Employees_Customers table*/
 INSERT INTO `employees_customers` (emp_id, cust_id) VALUES 

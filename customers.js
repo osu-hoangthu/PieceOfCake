@@ -45,15 +45,36 @@ module.exports = function(){
 
     router.delete('/:cust_id', function(req, res){
         var mysql = req.app.get('mysql');
-        var sql = "DELETE FROM customers WHERE cust_id = ?";
+        var sql = "DELETE FROM orders_menuitems WHERE order_id = (SELECT order_id FROM orders WHERE cust_id = ?)";
+        console.log(req.params.cust_id);
         var inserts = [req.params.cust_id];
         sql = mysql.pool.query(sql, inserts, function(error, results, fields){
             if(error){
+                console.log(JSON.stringify(error))
                 res.write(JSON.stringify(error));
-                res.status(400);
                 res.end();
             }else{
-                res.status(202).end();
+                sql = "DELETE FROM orders WHERE cust_id = ?";
+                inserts = [req.params.cust_id];
+                sql = mysql.pool.query(sql, inserts, function(error, results, fields){
+                    if(error){
+                        console.log(JSON.stringify(error))
+                        res.write(JSON.stringify(error));
+                        res.end();
+                    }else{
+                        sql = "DELETE FROM customers WHERE cust_id = ?";
+                        insert = [req.params.cust_id];
+                        sql = mysql.pool.query(sql, inserts, function(error, results, fields){
+                            if(error){
+                                res.write(JSON.stringify(error));
+                                res.status(400);
+                                res.end();
+                            }else{
+                                res.status(202).end();
+                            }
+                        })
+                    }
+                });
             }
         })
     })
