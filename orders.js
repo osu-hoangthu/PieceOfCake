@@ -70,13 +70,36 @@ module.exports = function(){
                 inserts = [req.body.cust_id, req.body.emp_id, req.body.num_items, req.body.cost];
                 sql = mysql.pool.query(sql,inserts,function(error, results, fields){
                     if(error){
-                        res.write(JSON.stringify(error));
-                        res.end();
+                        sql = "SELECT emp_id FROM employees WHERE emp_id = ?";
+                        inserts = [req.body.emp_id];
+                        sql = mysql.pool.query(sql,inserts,function(error, results, fields){
+                            if(!results.emp_id){
+                                sql = "INSERT INTO `employees`(`emp_id`, `fname`, `lname`, `pay`, `hours`) VALUES (?, 'N/A', 'N/A', 0, 0)"
+                                inserts = [req.body.emp_id];
+                                    sql = mysql.pool.query(sql,inserts,function(error, results, fields){
+                                        if(error){
+                                            res.write(JSON.stringify(error));
+                                            res.end();
+                                        }else{
+                                            sql = "INSERT INTO orders (cust_id, emp_id, num_items, cost) VALUES (?,?,?,?)";
+                                            inserts = [req.body.cust_id, req.body.emp_id, req.body.num_items, req.body.cost];
+                                            sql = mysql.pool.query(sql,inserts,function(error, results, fields){
+                                                if(error){
+                                                    res.write(JSON.stringify(error));
+                                                    res.end();
+                                                }else{
+                                                    res.redirect('/order');
+                                                }
+                                            });
+                                        }
+                                    });
+                            }
+                        });
                     }else{
                         res.redirect('/order');
                     }
                 });
-            }else {      
+            }else{      
                 sql = "INSERT INTO orders (cust_id, emp_id, num_items, cost) VALUES (?,?,?,?)";
                 inserts = [req.body.cust_id, req.body.emp_id, req.body.num_items, req.body.cost];
                 sql = mysql.pool.query(sql,inserts,function(error, results, fields){
